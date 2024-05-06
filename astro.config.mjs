@@ -2,12 +2,14 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sanity from "@sanity/astro";
 import react from "@astrojs/react";
-
 import sitemap from "@astrojs/sitemap";
+
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "<YOUR-SITE>",
+  site: "https://www.actualsize.com",
+  // TODO: replace site URL
   image: {
     remotePatterns: [
       {
@@ -30,4 +32,12 @@ export default defineConfig({
   redirects: {
     "/admin/[...slug]": "/admin",
   },
+  output: "hybrid",
+  adapter: vercel({
+    imageService: true,
+    // Using Vercel's image service since images on server-rendered pages currently receive a 404 error without it
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
