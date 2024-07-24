@@ -10,6 +10,14 @@ import sentry from "@sentry/astro";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.actualsize.com",
+  output: "hybrid",
+  adapter: vercel({
+    imageService: true,
+    // Using Vercel's image service since images on server-rendered pages currently receive a 404 error without it
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   // TODO: replace site URL
   image: {
     remotePatterns: [
@@ -37,15 +45,4 @@ export default defineConfig({
       },
     }),
   ],
-  redirects: {
-    "/admin/[...slug]": "/admin",
-  },
-  output: "hybrid",
-  adapter: vercel({
-    imageService: true,
-    // Using Vercel's image service since images on server-rendered pages currently receive a 404 error without it
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
 });
