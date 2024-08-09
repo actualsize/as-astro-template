@@ -42,8 +42,8 @@ importers:
         specifier: ^4.12.2
         version: 4.12.2(@types/node@20.14.12)(typescript@5.5.4)
       groq:
-        specifier: ^3.52.2
-        version: 3.52.2
+        specifier: ^3.52.4
+        version: 3.52.4
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -3100,6 +3100,10 @@ packages:
 
   groq@3.52.2:
     resolution: {integrity: sha512-1xVzIXca6Oc1JyozSyYpuKTeIVGPVhH5OMbNAT3y+RBoY6SY66AmbywjzPLjStouSrSP14dUctJApHNsjH/43w==}
+    engines: {node: '>=18'}
+
+  groq@3.52.4:
+    resolution: {integrity: sha512-EOwlT3oyp7kbBqfuPLedAvQUk4XLGGvjDzc3fBJjC2yjwQPivEbaZRslIU7WLUThy97GEpFWS7z1HKFGZTCd1A==}
     engines: {node: '>=18'}
 
   gunzip-maybe@1.4.2:
@@ -9123,6 +9127,8 @@ snapshots:
       - supports-color
 
   groq@3.52.2: {}
+
+  groq@3.52.4: {}
 
   gunzip-maybe@1.4.2:
     dependencies:
